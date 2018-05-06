@@ -1,4 +1,18 @@
-/* This JS file demonstrates the use of array and its functions in JavaScript. */
+/* This JS file demonstrates the use of array and its functions in JavaScript. 
+ * These are the methods that have been covered in this tutorial
+ 1. length
+ 2. shift()
+ 3. unshift()
+ 4. pop()
+ 5. push()
+ 6. slice()
+ 7. splice()
+ 8. indexOf()
+ 9. concat()
+ 10. map()
+ */
+
+
 
 // Create an Array 
 let arr1 = [1, 2, 3, 4, 5];
@@ -83,3 +97,15 @@ let arr3 = arr1.slice();
 for (let e of arr1) {
     console.log('e:', e);
 }
+
+//The concat() method is used for merging one or more arrays.
+//The concat() method does not change the existing arrays. It always returns a new array.
+let merge1 = ["Captain", "America"];
+var merge2 = ["Robert", "Downey", "Junior"];
+var merge3 = ["The", "Hulk"];
+var avengers = merge1.concat(merge2, merge3);     // Concatenates merge1 with merge2 and merge3
+
+//map method
+var arr = ['IronMan', 'Captain America', 'Hawkeye', 'Vision'];
+arr.map(avenger => avenger + ' is an Avenger');
+
