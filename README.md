@@ -22,3 +22,18 @@ Must have concepts presented in a simplifieid manner with the help of code snipp
 2. Lesser known things about JS.
 3. Regex 
 4. String Functions
+
+//hoisting
+  -- function hoisting
+  -- variable hoisting
+// let / var / const
+// spread/ over / destructor
+// oojs
+// promises
+---------
+css 
+
+create a circle using just csss- box- radius
+box model
+css positioning
+z-index
