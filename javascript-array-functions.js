@@ -103,9 +103,17 @@ for (let e of arr1) {
 let merge1 = ["Captain", "America"];
 var merge2 = ["Robert", "Downey", "Junior"];
 var merge3 = ["The", "Hulk"];
-var avengers = merge1.concat(merge2, merge3);     // Concatenates merge1 with merge2 and merge3
+var avengers = merge1.concat(merge2, merge3);  // Concatenates merge1 with merge2 and merge3
 
 //map method
 var arr = ['IronMan', 'Captain America', 'Hawkeye', 'Vision'];
 arr.map(avenger => avenger + ' is an Avenger');
 
+//fiter method
+//it creates a new array of filtered values based on your filter function
+
+function even(elem){
+	return elem %2 === 0 ? true : false ;
+}
+let array = [1,2,3,4,5,6,7,8,9,10];
+array.filter(even); // return [2,4,6,8,10]
