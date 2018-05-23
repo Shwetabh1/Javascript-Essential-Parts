@@ -75,5 +75,13 @@ function double(num) {
 
 console.log(typeof double); // Output: function
 
+Variable definition over function defintion
+
+var num = 2;
+
+function num(){}; 
+
+console.log(num); //here 2 will be printed
+
 
 /* class should be initialised first before using.*/
