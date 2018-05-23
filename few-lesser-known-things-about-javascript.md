@@ -16,3 +16,8 @@ A function can have properties and has a link back to its constructor method
 You can store the function in a variable.
 You can pass the function as a parameter to another function.
 You can return the function from a function.
+
+
+Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification, such as String, Math, RegExp, Object, Function, etc.
+
+Host objects are provided by the runtime environment (browser or Node), such as window, XMLHTTPRequest, etc.
