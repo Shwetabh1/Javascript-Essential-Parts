@@ -14,3 +14,5 @@ var boundFn = fn.bind(obj);
 boundFn();     // -> { value: 5 }
 fn.call(obj);  // -> { value: 5 }
 fn.apply(obj); // -> { value: 5 }
+
+//so where do we use it?

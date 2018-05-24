@@ -26,12 +26,28 @@ addN(5);
 
 // 2. Why would you use one ?
 /*
--> Data privacy / emulating private methods with closures. Commonly used in the module pattern.
--> Partial applications or currying.
+-> Data privacy / closures are commonly used to give objects data privacy. 
+-> Partial applications or currying. e.g when you get some parameter later
 -> Closures are mostly used in callbacks, such as timeouts, event handlers, and so on, as well as in modules.
 */
 
-//print 1 to 5 and use setTimout in it.
+//EXAMPLE 1 Data Privacy
+function create() {
+    var counter = 0;
+    return {
+      increment: function() {
+        counter++;
+      },
+      print: function() {
+        console.log(counter);
+      }
+    }
+  }
+  var c = create();
+  c.increment();
+  c.print(); // 1
+ 
+//EXAMPLE 3 print 1 to 5 and use setTimout in it.
 
 function closureDummy(n) {
     var num = n;
@@ -60,10 +76,9 @@ for (let i = 0; i < 5; i++) {
 
 //3. How does it work internally ?
 /*
+ * First off, JavaScript has lexical scoping with function scope.
+ * In other words, even though JavaScript looks like it should have block scope because it uses curly braces { }, a new scope is created only when you create a new function.
+ * 
+ * The scope of variables is defined by their position in source code.
+ * In order to resolve variables, JavaScript starts at the innermost scope and searches outwards until it finds the variable it was looking for.
  */
-
-
-
-
-
-
