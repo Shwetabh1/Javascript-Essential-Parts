@@ -1,43 +1,38 @@
-# Javascript-Essential-Parts
-//put one image here
+<h1 align="center"> Javascript-Essential-Parts </h1>
 
-Must have concepts presented in a simplifieid manner with the help of code snippets.
+<div align="center">
+    <img src="https://github.com/Shwetabh1/Javascript-Essential-Parts/blob/master/Essential_JS.png" alt="Essential JavaScript" width="400" height="400"/>
+  <br>
+</div>
 
-*Content*
+
+## What is this?
+> You can never understand everything but you should push yourself to understand the system.
+ 
+> *-Ryan Dahl (creator of Node.JS)*
+
+The above quote is what motivated me to create this repository. This repository aims to explain the must have concepts of JavaScript in a simplifieid manner.
+
+## Table of Contents
 1. Array methods in JavaScript.
-2. Arrow Functions in JavaScript.
-3. Closures in JavaScript.
-4. Currying in JavaScript.
-5. Difference Between `call`, `apply` and `bind`.
-6. Difference Between `let` and `var`.
-7. Difference Between Scope and Context.
-8. Event Loop in JavaScript.
-8. Hoisting in JavaScript.
-10. IIFE explained.
-11.Null in JavaScript.
-12. Protoypical Inheritance.
-13.  
+1. Arrow Functions in JavaScript.
+1. Closures in JavaScript.
+1. Currying in JavaScript.
+1. Difference Between `call`, `apply` and `bind`.
+1. Difference Between `let` and `var`.
+1. Difference Between Scope and Context.
+1. Event Delegation.
+1. Hoisting in JavaScript.
+1. IIFE explained.
+1. Lesser known things about JS.
+1. Null in JavaScript.
+1. Protoypical Inheritance.
 
-//TODO
-1. Important Concepts.
-2. Lesser known things about JS.
-3. Regex 
-4. String Functions
+## ONGOING
+1. Event Loop in JS.
+1. Regular Expressions. 
+1. String Functions.
+1. How Garbage Collection Works in JS.
+1. How this works in JS.
 
-//hoisting
-  -- function hoisting
-  -- variable hoisting
-// let / var / const
-// spread/ over / destructor
-// oojs
-// promises
----------
-css 
 
-create a circle using just csss- box- radius
-box model
-css positioning
-z-index
-
-you can never understand everything but you should push yourself to understand the system
-- Ryan Dahl (creator of Node.JS)

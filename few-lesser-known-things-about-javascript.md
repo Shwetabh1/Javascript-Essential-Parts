@@ -1,4 +1,4 @@
-//[ONGOING]
+[ONGOING]
 
 #Difference between console.log() and console.dir()#
 
