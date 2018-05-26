@@ -20,7 +20,7 @@ Native objects are objects that are part of the JavaScript language defined by t
 
 Host objects are provided by the runtime environment (browser or Node), such as window, XMLHTTPRequest, etc.
 
-# `null` is not an instance of Object. #
+## `null` is not an instance of Object. ##
 
 If you try  `typeof null` it returns object. This is actually a bug that is so deeproted it can't be removed.
 ECMA script clearly states that `null` is not an Object but a primitive value.
