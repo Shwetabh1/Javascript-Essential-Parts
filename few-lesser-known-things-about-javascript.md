@@ -31,14 +31,14 @@ There are two things at play here. `null value` and `null type`. `null value` is
 
 Consider the following test cases and their outputs
 
-`null == 0`
->false
-`null > 0`
->false
-`null + 1 === 1`
->true
-`null > 0 || null == 0` 
->false
+`null == 0` <br>
+output: `false` <br>
+`null > 0` <br>
+output: `false`<br>
+`null + 1 === 1` <br>
+output: `true`<br>
+`null > 0 || null == 0` <br> 
+output: `false`<br>
 
 `null` undergoes type coercion when compared against different type values as Null is a type in itself.
 When compared against numbers it is coerced to numbers.
