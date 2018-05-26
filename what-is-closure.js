@@ -57,7 +57,9 @@ When you know data at a later time;
 //closure 
 
 GLobal scope is visible to all other scopes.In client-side JavaScript, 
-the global scope is generally the web page inside which all the code is being executed. 
+the global scope is generally the web page inside which all the code is being executed.
+A global object is defined in global scope.Window or global in case of node 
+ 
 
 
 
