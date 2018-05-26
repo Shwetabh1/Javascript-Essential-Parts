@@ -1,4 +1,5 @@
 # Javascript-Essential-Parts
+//put one image here
 
 Must have concepts presented in a simplifieid manner with the help of code snippets.
 
@@ -37,3 +38,6 @@ create a circle using just csss- box- radius
 box model
 css positioning
 z-index
+
+you can never understand everything but you should push yourself to understand the system
+- Ryan Dahl (creator of Node.JS)

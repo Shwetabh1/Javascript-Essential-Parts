@@ -1,4 +1,4 @@
-/* let and var have a lot of differences. I will explain each by a simple example.
+/* let and var have a lot of differences.
  * 1. let is scoped to the nearest enclosing block where as var is scoped to the nearest function block.
  * 2. Visibility in Global scope.
  * 3. Performance.
@@ -7,15 +7,16 @@
  */
 
 // 1. let is scoped to the nearest enclosing block where as var is scoped to the nearest function block.
-// consider the following example. variable declared via var can be used inside anywhere within the function.
-function byE40() {
-    //nish *is* visible out here
+// Consider the following example. Variable declared via var can be used inside anywhere within the function.
 
-    for( var nish = 0; nish < 5; nish++ ) {
-        //nish is visible to the whole function
+function hasForLoop() {
+    //fVar *is* visible out here
+
+    for( var fVar = 0; fVar < 5; fVar++ ) {
+        //fVar is visible to the whole function
     }
 
-    //nish *is* visible out here
+    //fVar *is* visible out here
 }
 
 
@@ -33,17 +34,18 @@ function allyIlliterate() {
 
 //2. Visibility in Global scope. Declare a variable but access it before. Can be done with var. (hoisting) but not with let 
 //let variables are only usable in lines of code that occur after the variable is declared (even though they are hoisted!).
-war = 'bitch';
+war = 'Maroon 5';
 console.log(war);
 var war;
 
 // this will give an error. Variable not defined.
-letItGo = hey;
+letItGo = 'hey';
 console.log(letItGo); 
 let letItGo ;
 
 //3. Performance
-
+//let is faster than var, but only when inside a different scope than the main scope of a function. 
+//In the main scope, var and let are roughly identical in performance.
 
 //4. let variables may not be redeclared by a subsequent var or let.
 
@@ -60,7 +62,6 @@ let a = 'b'; //thorws an error;
 //5. The window object is supported by all browsers. It represents the browser's window.
 //   All global JavaScript objects, functions, and variables automatically become members of the window object.
 //   Global let variables are not added in the window object.
-
 
 /*  
  * NOTE: const is similar to let in all aspects apart from the fact that variable declared via const can't be reassigned.

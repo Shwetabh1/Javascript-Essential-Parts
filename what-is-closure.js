@@ -1,5 +1,4 @@
 /* 
- * Here we explore the what, why and how of closures.
  * 1. What is closure?
  * 2. Why do we need closures?
  * 3. How does it work internally?

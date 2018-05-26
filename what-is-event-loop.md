@@ -1,17 +1,16 @@
-What the heck is event loop anyway?
-
+#What the heck is event loop anyway?
 To understand event loops first we need to understand about the inherent properties of JavaScript.
 JS is a single threaded, non-blocking, asynchronous, concurrent language.
 
-#Single Thread
+##Single Thread##
 
 JavaScript has only one execution context or thread. That is at most one of the setTimeout callbacks(blocking functions) can execute 
 at a time.
 
-How its non-blocking?
+##How its non-blocking?##
 Execution never stops. A asynchornous function is handled by webapis and exceution continues.
 
-How does everything work together?
+##How does everything work together?##
 
 Consider the below diagram:
 //todo the diagram
