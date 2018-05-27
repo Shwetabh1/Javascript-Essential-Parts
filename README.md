@@ -29,7 +29,8 @@ The above quote is what motivated me to create this repository. This repository 
 1. Regular Expressions.
 
 ## Ongoing
-1. Event Loop in JS. 
+1. Event Loop in JS.
+1. Regular Expressions. 
 1. String Functions.
 1. How Garbage Collection Works in JS.
 1. How this works in JS.
