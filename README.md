@@ -10,7 +10,7 @@
 > You can never understand everything but you should push yourself to understand the system.<br/>
 > *-Ryan Dahl (creator of Node.JS)*
 
-The above quote is what motivated me to create this repository. This repository aims to explain the must have concepts of JavaScript in a simplifieid manner.
+The above quote is what motivated me to create this repository. This repository aims to explain the must have concepts of JavaScript in a simplified manner.
 
 ## Table of Contents
 1. Array methods in JavaScript.
