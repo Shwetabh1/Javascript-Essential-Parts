@@ -1,3 +1,4 @@
+
 /*
   All three are used for calling a function with a certain context.
   Use .bind() when you want that function to later be called with a certain context, useful in events. 
@@ -42,13 +43,11 @@ var person = {
 person.hello("world");  // output: "James Smith says hello world"
 person.hello.call({ name: "Jim Smith" }, "world"); // output: "Jim Smith says hello world"
 
+person.hello.apply({ name: "Drake Smith" }, ["world"]);
+
 //for bind we can save the context and use it later.
 var saveContext = person.hello.bind({name: 'Captain America'}, "world");
 //call saveContext() at a later time.
 saveContext();
 
-.
-
-
-
-
+person.hello.apply( )
