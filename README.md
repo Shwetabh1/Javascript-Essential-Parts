@@ -1,7 +1,7 @@
 <h1 align="center"> Javascript-Essential-Parts </h1>
 
 <div align="center">
-    <img src="https://github.com/Shwetabh1/Javascript-Essential-Parts/blob/master/Essential_JS.png" alt="Essential JavaScript" width="300" height="300"/>
+    <img src="https://github.com/Shwetabh1/Javascript-Essential-Parts/blob/master/Essential_JS.png" alt="Essential JavaScript" width="400" height="360"/>
   <br>
 </div>
 
@@ -30,7 +30,6 @@ The above quote is what motivated me to create this repository. This repository 
 
 ## Ongoing
 1. Event Loop in JS.
-1. Regular Expressions. 
 1. String Functions.
 1. How Garbage Collection Works in JS.
 1. How this works in JS.

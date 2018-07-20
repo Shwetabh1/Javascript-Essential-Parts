@@ -1,16 +1,27 @@
 /*
  * Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
  * Of note however, is the fact that the hoisting mechanism only moves the declaration. The assignments are left in place.
- * There are three aspects to consider. 1. var & let & const 2. function 
+ * There are three aspects to consider. 
+       1. How it works internally.  
+       2. Hoisting for var, let & const. 
+       3. Hoisting for function. 
  */
 
-console.log(abc); // abc would be undefined. 
+// 1.How it works internally
+/*To understand this we need to understand JavaScript compilation/interpretation code. 
+JavaScript is first converted into an abstract syntax tree.
+During this phase the variable declaration are moved to the top of their scope while defintions are left in place.
+This is how hoisting works.*/
+
+// 2.Hoisting for var, let and const.
+//Hoisting doesn't happen for let and const.
+//Consider the follwing example:
+
+console.log(abc); // output would be undefined. 
 var abc = "hello";
 
-/*
- * The above code snippets is essentially sth like this while interpreting. This is called hoisiting. Works in case of var and functions.
- * but not with let and const.
- */
+//The above code snippets essentially becomes like following while interpreting. This is called hoisting. 
+
 var abc;
 console.log(abc);
 abc = "hello";
@@ -20,15 +31,14 @@ abc = "hello";
  */
 a = 5;
 
-// here a becomes a global variable which can be used anywhere.
+//here a becomes a global variable which can be used anywhere.
 var a = b = 5;
-// here b =5 and a = b. thus b is a global variable while a is not.
+// here b = 5 and a = b. thus b is a global variable while a is not.
 //This means that, all undeclared variables are global variables.
 
+// 3. Hoisting for function.
 /*
- *
  *function declaration are hoisted but function expressions are not hoisted.
- * what that essentially means is
  */
 //Function declarations
 
@@ -37,9 +47,6 @@ hoisted(); // Output: "This function has been hoisted."
 function hoisted() {
     console.log('This function has been hoisted.');
 };
-
-// this will give the output.
-
 
 //function expressions are not hoisted.
 expression(); //Output: "TypeError: expression is not a function
@@ -52,8 +59,7 @@ var expression = function() {
  * Also Note, 
  */
 
-Variable assignment over
-function declaration
+//Variable assignment over function declaration
 var double = 22;
 
 function double(num) {
@@ -61,7 +67,8 @@ function double(num) {
 }
 
 console.log(typeof double); // Output: number
-Function declarations over variable declarations
+
+//Function declarations over variable declarations
 var double;
 
 function double(num) {
@@ -70,8 +77,7 @@ function double(num) {
 
 console.log(typeof double); // Output: function
 
-Variable definition over
-function defintion
+//Variable definition over function defintion
 
 var num = 2;
 
