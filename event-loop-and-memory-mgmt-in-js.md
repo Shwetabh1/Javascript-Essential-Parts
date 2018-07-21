@@ -13,7 +13,7 @@ Execution never stops. A asynchornous function is handled by webapis and exceuti
 
 <h3>How does everything work together?</h3>
 
-<img src="https://github.com/Shwetabh1/Javascript-Essential-Parts/blob/master/JavScript_CallStack.png" alt="Essential JavaScript" width="640" height="480"/>
+<img src="https://github.com/Shwetabh1/Javascript-Essential-Parts/blob/master/Images/JavScript_CallStack.png" alt="Essential JavaScript" width="640" height="480"/>
 
 
 1. Heap : This is where the memory allocation happens
