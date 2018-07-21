@@ -9,9 +9,17 @@
 
 // 1.How it works internally
 /*To understand this we need to understand JavaScript compilation/interpretation code. 
-JavaScript is first converted into an abstract syntax tree.
+JavaScript code is first tokenized and then parsed into an abstract syntax tree.
 During this phase the variable declaration are moved to the top of their scope while defintions are left in place.
-This is how hoisting works.*/
+This is how hoisting works.
+
+Whenever v8 enters the execution context of a certain code (function); it starts by lexing or tokenizing the code. Which mean it will split your code into atomic tokens like foo = 10.
+After analyzing the entire current scope, it parses a translated version of into an AST (for Abstract Syntax Tree).
+Each time it encounter a declaration, it sends it to the scope to create the binding. For each declaration it allocates memory for that variable. Just allocates memory, doesn’t modify the code to push the declaration up in the codebase. And as you know, in JS, allocating memory means setting the default value undefined.
+After that, each time it encounters an assignment or an evaluation, it asks the scope for the binding. If not found in the current scope, it goes up into parent scopes until it finds it.
+Then it generate the machine code that the CPU can execute.
+Finally, the code is executed.
+*/
 
 // 2.Hoisting for var, let and const.
 //Hoisting doesn't happen for let and const.
