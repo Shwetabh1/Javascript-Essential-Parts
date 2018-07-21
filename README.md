@@ -14,8 +14,7 @@ The above quote is what motivated me to create this repository. This repository 
 
 ## Table of Contents
 1. Document Object Model
-	i.DOM Concepts [ongoing]
-
+	1. DOM Concepts [ongoing]
 1. Array methods in JavaScript.
 1. Arrow Functions in JavaScript.
 1. Closures in JavaScript.
