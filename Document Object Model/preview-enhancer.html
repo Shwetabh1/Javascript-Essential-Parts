@@ -1,0 +1,59 @@
+<!-- Simple  vanilla Code Snippet manipulating DOM to maginify and color text content -->
+<html>
+	<head>
+		<style>
+ 			#display {  
+ 				color: red;
+  				font-size: 40px;
+  				margin: 10px;
+  				font-family: 'arial';
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+  		<input id="in" placeholder="Enter Text">
+  		<select class="tc"> 
+  			<option> red </option>
+  			<option> blue </option>
+  			<option> green </option>
+  		</select>
+  		<button id="back"> Animate Background</button>
+		</div>
+		<script>
+			var inp = document.getElementById('in');
+			var col = document.querySelector('.tc');
+			var z = document.createElement('div'); //create a div
+			var but = document.querySelector('#back');
+
+			inp.addEventListener('input', eventAction);
+			col.addEventListener('change', colorChange);
+			but.addEventListener('click', changeBack);
+			z.id= "display"; //add style to it
+			document.body.appendChild(z);
+
+			function eventAction(e) {
+  				var text = e.target.value; //getting the text stored in input box
+  				z.innerHTML = text;
+			}
+
+			function colorChange(e) {
+				z.style.color = e.target.value;
+			}
+
+			function changeBack() {
+				document.body.style.background = "yellow";
+				setTimeout(function() {
+					document.body.style.background = "green";
+				}, 2000);
+				setTimeout(function() {
+					document.body.style.background = "white";
+				}, 4000);
+			}
+
+			/*var promise3 = new Promise(function(resolve, reject) {
+  				setTimeout(resolve, 1000);
+			});*/
+		</script>
+	</body>
+</html>
