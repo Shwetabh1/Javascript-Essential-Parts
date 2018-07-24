@@ -1,4 +1,5 @@
-<h2> Document Object Model <h2>
+<h2> Document Object Model </h2>
+
 1. What is DOM?
 1. Examining the DOM object.
 1. Accessing the DOM.
@@ -8,9 +9,9 @@
 The Document Object Model (DOM) is a programming interface for HTML and XML documents. It is a structure that can be manipulated by javascript or any other scripting language. The DOM model represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree; with them you can change the document's structure, style or content. Nodes can have event handlers attached to them. Once an event is triggered, the event handlers get executed.
 
 <h3> Examining the DOM Object </h3>
-*Use console.dir(document) to display all DOM elements for a webpage.*
-`
-// console.dir(document);
+_Use console.dir(document) to display all DOM elements for a webpage_
+
+```// console.dir(document);
 // console.log(document.domain);
 // console.log(document.URL);
 // console.log(document.title);
@@ -24,7 +25,8 @@ The Document Object Model (DOM) is a programming interface for HTML and XML docu
 // console.log(document.forms[0]);
 // console.log(document.links);
 // console.log(document.images);
-`
+```
+
 <h3> Accessing the DOM element </h3>
 * `document.getElementById()`
 * `document.getElementsByTagName()`
@@ -45,10 +47,10 @@ textContent: will display 123 along with hello
 // header.style.borderBottom = 'solid 3px #000';
 
 2. document.getElementsByClassName()
-	document.getElementsByTagName()
+   document.getElementsByTagName()
 
 3. document.querySelector()
-	document.querySelectorAll()
+   document.querySelectorAll()
 var header = document.querySelector('#header');
 header.style.borderBottom
 
