@@ -4,7 +4,7 @@ First and foremost if you believe interpreted language means it will hit line nu
 
 In compilation human readable code is converted into machine readable code before execution. For example bytecode in Java, a native excutable file in c. Now you can use this file and execute directly as it can be easily understood by hardware. It doesn't need another compilation for it to execute.
 
-In Interpreted Language first the program is broken down and converted into "something else" which can be 'an abstract syntax tree', 'A tokenized representation of the source program' etc. which is then executed by interpreter. We need interpreter to execute it as these are not native machine codes directly excutable by hardware.
+In Interpreted Language first the program is broken down and converted into "something else" which can be 'an abstract syntax tree', 'A tokenized representation of the source program' etc. which is then executed by interpreter. We need interpreter to execute it as these are not native machine codes directly excutable by hardware. And everytime you execute your program, everytime it is converted into "something else" that is why interpretation is slow. 
 
 Javascript has come a long way since its inception in 1995. Javscript was an interpreted language. It no longer is.
 
