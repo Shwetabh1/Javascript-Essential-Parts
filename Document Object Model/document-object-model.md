@@ -47,38 +47,104 @@ textContent: will display 123 along with hello
 // header.style.borderBottom = 'solid 3px #000';
 
 2. document.getElementsByClassName()
-   document.getElementsByTagName()
+// var items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// console.log(items[1]);
+// items[1].textContent = 'Hello 2';
+// items[1].style.fontWeight = 'bold';
+// items[1].style.backgroundColor = 'yellow';
+
+// // Gives error
+// //items.style.backgroundColor = '#f4f4f4';
+
+// for(var i = 0; i < items.length; i++){
+//   items[i].style.backgroundColor = '#f4f4f4';
+// }   
 
 3. document.querySelector()
-   document.querySelectorAll()
-var header = document.querySelector('#header');
+	The Element method querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.
+	var header = document.querySelector('#header');
 header.style.borderBottom
-
 document.querySelector('.list-group-item:last-child');
 document.querySelector('.list-group-item:nth-child(2)');
+   
+   document.querySelectorAll()
+   var matches = document.querySelectorAll("p"); //obtain a nodelist of all <p> elements.
+   // var odd = document.querySelectorAll('li:nth-child(odd)');
+   // var even= document.querySelectorAll('li:nth-child(even)');
+
+4. document.getElementsByTagName()
 
 //////////// Traversing the DOM //////////
-
-var itemList = document.querySelector('#items');
-console.log(itemList.parentNode); //this give the parentNode
-itemList.parentNode.style.backgroundColor = 'yellow';
-
 
 children
 firstElementChild
 nextElementSibling
 previousElementSibling
-
-
 createElement
-var newDiv = document.createElement('div');
 
-newDiv.className = "hello";
+// childNodes
+// console.log(itemList.childNodes);
 
-newDiv.id = "hello1";
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'yellow';
 
+// // FirstChild
+// console.log(itemList.firstChild);
+// // firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1';
+
+
+// lastChild
+// console.log(itemList.lastChild);
+// lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+// nextSibling
+// console.log(itemList.nextSibling);
+// // nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+// previousSibling
+// console.log(itemList.previousSibling);
+// previousElementSibling
+// console.log(itemList.previousElementSibling);itemList.previousElementSibling.style.color = 'green';
+
+// createElement
+
+// Create a div
+var newDiv =  document.createElement('div');
+
+// Add class
+newDiv.className= 'hello';
+
+// Add id
+newDiv.id = 'hello1';
+
+// Add attr
 newDiv.setAttribute('title', 'Hello Div');
+
+// Create text node
+var newDivText = document.createTextNode('Hello World');
+
+// Add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
 console.log(newDiv);
+
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv, h1);
+
+
+
+
 
 
 /////////// DOM Event Handling //////////
