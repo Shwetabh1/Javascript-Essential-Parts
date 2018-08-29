@@ -151,6 +151,8 @@ container.insertBefore(newDiv, h1);
 var but = document.querySelector('#sub');
 but.addEventListener('click', function1);
 
-function function1(e){
+function function1(e) {
 	console.log(e); //e.target //e.target.id;
 }
+
+

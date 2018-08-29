@@ -2,7 +2,8 @@
 Why JavaScript is called single threaded? what is the event loop? What is asynchronous execution?
 To understand all these we need to understand about the inherent properties of JavaScript.
 JavaScript is a single threaded, non-blocking, asynchronous, concurrent language.
-
+It treats functions as first class object.
+What that means essentially is `this means that the language supports constructing new functions during the execution of a program, storing them in data structures, passing them as arguments to other functions, and returning them as the values of other functions`
 <h3>Single Thread</h3>
 
 JavaScript has only one execution context or thread. That is at most one of the setTimeout callbacks(blocking functions) can execute 

@@ -113,7 +113,7 @@ arr.map(avenger => avenger + ' is an Avenger');
 //it creates a new array of filtered values based on your filter function
 
 function even(elem){
-	return elem %2 === 0 ? true : false ;
+	return elem % 2 === 0 ? true : false ;
 }
 let array = [1,2,3,4,5,6,7,8,9,10];
 array.filter(even); // return [2,4,6,8,10]

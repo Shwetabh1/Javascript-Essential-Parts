@@ -83,3 +83,24 @@ var arr = reg1.exec('football');
 //search
 //returns the index
 'hey'.search(/h/);
+
+/*Advanced Shit */
+
+num="11222333";
+
+// This regex captures the last 3 digits as capture group #2
+// and all preceding digits as capture group #1
+re = /(\d+)(\d{3})/;
+
+re.test(num);
+
+// This replace call replaces the match of the regex (which happens
+// to match everything) with the first capture group ($1) followed by
+// a comma, followed by the second capture group ($2)
+num.replace(re, "$1,$2");
+
+var re = /(\w+)\s(\w+)/;
+var str = 'John Smith';
+str.replace(re, '$2, $1'); // "Smith, John"
+RegExp.$1; // "John"
+RegExp.$2; // "Smith"

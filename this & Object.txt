@@ -1,0 +1,390 @@
+To understand prototypical Inheritance we need to understand about this and functions. All functions are objects in JS thus a function can also have properties. In fact each function has a property called `prototype`
+
+function sample() {
+
+}
+
+typeof sample.prototype // returns object
+
+1. What is this?
+2. What is [[prototype]]
+3. What is __proto__ and what is the difference between __proto__ and prototype
+4. How does everythhing span out together
+
+1. What is this?
+
+- This is autmatically defined in the scope of every function.
+- It is a runtime binding that is based on the call site.
+- this binding has nothing to do with where a function is declared, but has instead everything to do with the manner in which the function is called.
+- When a function is invoked, an activation record, otherwise known as an execution context, is created. This record contains information about where the function was called from (the call-stack), how the function was invoked, what parameters were passed, etc. One of the properties of this record is the this reference which will be used for the duration of that function's execution.
+
+
+ 1.1 What is the advanatge?
+ The this mechanism provides a more elegant way of implicitly "passing along" an object reference, leading to cleaner API design and easier re-use.
+
+ 1.2 What is call site?
+ The location in code where a function is called (not where it's declared)
+
+ 1.3 Where will this point is determined by 4 rules.
+
+ //Context: consider a function sample()
+
+    function sample() {
+        this.count++;
+    }
+
+    sample.count = 0;
+
+    // now if I do sample() and check the count value it will be 0.
+    // why?
+    // Because here this refers to the global context.
+
+    >The 4 Rules are as follows:
+
+     i) Default Binding:
+        In global context a & this.a points to the same.
+        function foo() {
+            console.log( this.a );
+        }
+
+        var a = 2;
+
+        foo(); // 2
+    ii) Implicit Binding:
+        function foo() {
+            console.log( this.a );
+        }
+
+        var obj = {
+            a: 2,
+            foo: foo
+        };
+
+        obj.foo(); // 2
+
+        Observe the call site and thus the context is determined based on that. If there are multiple contexts then the top most matters.
+
+        Implicit Losss
+
+        function foo() {
+            console.log( this.a );
+        }
+
+        var obj = {
+            a: 2,
+            foo: foo
+        };
+
+        var bar = obj.foo; // function reference/alias!
+
+        var a = "oops, global"; // `a` also property on global object
+
+        bar(); // "oops, global"
+
+        setTimeout( obj.foo, 100 );  // will also give global because the call site for setTimeout is just a function. function setTimeout()
+
+        Here call site is what matters  and the call-site is bar(), which is a plain, un-decorated call and thus the default binding applies. Unlike above case where we were calling like a.foo();
+
+        iii) Explicit Binding
+        To overcome all this loss of binding and unexpected behaviour we use something called as Explicit Binding. Use of call, apply and bind.
+
+        iv) new Binding
+
+        When a function is invoked with new in front of it, otherwise known as a constructor call, the following things are done automatically:
+
+        1.a brand new object is created (aka, constructed) out of thin air
+        2.the newly constructed object is [[Prototype]]-linked
+        3.the newly constructed object is set as the this binding for that function call
+        4.unless the function returns its own alternate object, the new-invoked function call will automatically return the newly constructed object.
+
+        Consider this code:
+
+        function foo(a) {
+            this.a = a;
+        }
+
+        var bar = new foo( 2 );
+        console.log( bar.a ); // 2
+        By calling foo(..) with new in front of it, we've constructed a new object and set that new object as the this for the call of foo(..). So new is the final way that a function call's this can be bound. We'll call this new binding.
+
+        Note: Ignored this
+        If you pass null or undefined as a this binding parameter to call, apply, or bind, those values are effectively ignored, and instead the default binding rule applies to the invocation.
+
+    1.4 How would you ignore a binding?
+    Use Null. In cases where you want to "safely" ignore a this binding, a "DMZ" object like ø = Object.create(null) is a good placeholder value that protects the global object from unintended side-effects.
+    Example:
+
+    function foo(a,b) {
+        console.log( "a:" + a + ", b:" + b );
+    }
+
+    // our DMZ empty object
+    var ø = Object.create( null );
+
+    // spreading out array as parameters
+    foo.apply( ø, [2, 3] ); // a:2, b:3
+
+    // currying with `bind(..)`
+    var bar = foo.bind( ø, 2 );
+    bar( 3 ); // a:2, b:3
+
+
+##Lets Learn about Objects in Javascript.
+
+Objects come in two forms: the declarative (literal) form, and the constructed form.
+
+var myObj = {
+    key: value
+    // ...
+};
+
+var myObj = new Object();
+myObj.key = value;
+
+1.The only difference really is that you can add one or more key/value pairs to the literal declaration, whereas with constructed-form objects, you must add the properties one-by-one.
+2.Either way you have just created a JavaScript object called Website. The main difference here is what you can do with it. With the constructor function notation you create an object that can be instantiated into multiple instances (with the new keyword), while the literal notation delivers a single object, like a singleton.
+3. Also you making private memebers is quite easy with constructor function.
+
+In ECMA script there are 6 primitive types defined:
+string
+number
+boolean
+null
+undefined
+object
+
+//Duplicating Objects
+
+deep copy
+
+
+One subset solution is that objects which are JSON-safe (that is, can be serialized to a JSON string and then re-parsed to an object with the same structure and values) can easily be duplicated with:
+
+var newObj = JSON.parse( JSON.stringify( someObj ) );
+
+shallow copy can be done via Object.assign() defined in ES6
+
+shallow copy
+
+Object.assign(..) takes a target object as its first parameter, and one or more source objects as its subsequent parameters. It iterates over all the enumerable (see below), owned keys (immediately present) on the source object(s) and copies them (via = assignment only) to target.
+
+Property Descriptors
+
+Object.getOwnPropertyDescriptor( myObject, "a" );
+// {
+//    value: 2,
+//    writable: true,
+//    enumerable: true,
+//    configurable: true
+// }
+
+var myObject = {};
+
+Object.defineProperty( myObject, "a", {
+    value: 2,
+    writable: true,
+    configurable: true,
+    enumerable: true
+} );
+
+myObject.a; // 2
+
+writable: make it readonly
+configurable: don't let it delete
+enumerble: can be iterated
+
+
+
+Class Theory:
+
+It is a design pattern where we mimic real world problem. "Class/Inheritance" describes a certain form of code organization and architecture -- a way of modeling real world problem domains in our software.
+OO or class oriented programming stresses that data intrinsically has associated behavior (of course, different depending on the type and nature of the data!) that operates on it, so proper design is to package up (aka, encapsulate) the data and the behavior together.
+
+What are Mixins???
+JavaScript doesn't provide a native mechanism for Multiple Inheritance.
+
+The contents gets mixeed in ;)
+
+There are two types of mixins
+
+1. Explicit Mixins
+
+// vastly simplified `mixin(..)` example:
+function mixin( sourceObj, targetObj ) {
+	for (var key in sourceObj) {
+		// only copy if not already present
+		if (!(key in targetObj)) {
+			targetObj[key] = sourceObj[key];
+		}
+	}
+
+	return targetObj;
+}
+
+var Vehicle = {
+	engines: 1,
+
+	ignition: function() {
+		console.log( "Turning on my engine." );
+	},
+
+	drive: function() {
+		this.ignition();
+		console.log( "Steering and moving forward!" );
+	}
+};
+
+var Car = mixin( Vehicle, {
+	wheels: 4,
+
+	drive: function() {
+		Vehicle.drive.call( this );
+		console.log( "Rolling on all " + this.wheels + " wheels!" );
+	}
+} );
+
+//car already has a drive property so that reference was not overridden.
+
+2. Implicit Mixins
+
+var Something = {
+	cool: function() {
+		this.greeting = "Hello World";
+		this.count = this.count ? this.count + 1 : 1;
+	}
+};
+
+Something.cool();
+Something.greeting; // "Hello World"
+Something.count; // 1
+
+var Another = {
+	cool: function() {
+		// implicit mixin of `Something` to `Another`
+		Something.cool.call( this );
+	}
+};
+
+Another.cool();
+Another.greeting; // "Hello World"
+Another.count; // 1 (not shared state with `Something`)
+With Something.cool.call( this ), which can happen either in a "constructor" call (most common) or in a method call (shown here), we essentially "borrow" the function Something.cool() and call it in the context of Another (via its this binding; see Chapter 2) instead of Something. The end result is that the assignments that Something.cool() makes are applied against the Another object rather than the Something object.
+
+So, it is said that we "mixed in" Somethings behavior with (or into) Another
+
+
+
+
+
+//Now comes the mega mojo mumbo jumbo
+
+Protypical Inheritance the big dawg
+
+An object specifies its prototype via the internal property [[Prototype]]
+
+
+The __proto__ is an accessor property of the Object.prototype object. It exposes the internal prototype linkage ( [[Prototype]]) of an object through which it is accessed.
+
+__proto__ is the actual object that is used in the lookup chain to resolve methods, etc.  prototype is the object that is used to build __proto__ when you create an object with new:
+
+( new Foo ).__proto__ === Foo.prototype;
+( new Foo ).prototype === undefined;
+
+prototype is availaible only on the constructor function and __proto__ available on the instances.
+
+Object.create does the prototype linkage
+var anotherObject = {
+	a: 2
+};
+
+// create an object linked to `anotherObject`
+var myObject = Object.create( anotherObject );
+
+myObject.a; // 2
+
+here myObject is empty but is prototype linked
+
+
+FIRST TRY TO FIND IT IN THE PROTOTYPE CHAIN. IF FOUND DO YOUR OPERATIONS. IF NOT FOUND ADD AND THEN DO YOUR OPERATION. 
+
+In Javascript there is no instantiation. Just Linking.
+
+In JavaScript, we don't make copies from one object ("class") to another ("instance"). We make links between objects.
+
+
+
+All objects have an internal property called [[Prototype]]. The value of this property is either null or an object and is used for implementing inheritance.
+
+The value of the prototype property is used to initialize the [[Prototype]] internal property of a newly created object before the Function object is invoked as a constructor for that newly created object
+
+There is no blueprint. everything is object and linking.
+But in JavaScript, there are no such copy-actions performed. You don't create multiple instances of a class. You can create multiple objects that [[Prototype]] link to a common object.
+
+This mechanism is often called "prototypal inheritance" (we'll explore the code in detail shortly), which is commonly said to be the dynamic-language version of "classical inheritance". It's an attempt to piggy-back on the common understanding of what "inheritance" means in the class-oriented world, but tweak (read: pave over) the understood semantics, to fit dynamic scripting.
+
+
+
+//Fix the missing constructor this way to show off
+function Foo() { /* .. */ }
+
+Foo.prototype = { /* .. */ }; // create a new prototype object
+
+// Need to properly "fix" the missing `.constructor`
+// property on the new object serving as `Foo.prototype`.
+// See Chapter 3 for `defineProperty(..)`.
+Object.defineProperty( Foo.prototype, "constructor" , {
+	enumerable: false,
+	writable: true,
+	configurable: true,
+	value: Foo    // point `.constructor` at `Foo`
+} );
+
+
+
+
+
+//Here is the mega code Mumbo Jumbo
+
+Foo.prototype.myName = function() {
+	return this.name;
+};
+
+function Bar(name,label) {
+	Foo.call( this, name );
+	this.label = label;
+}
+
+// here, we make a new `Bar.prototype`
+// linked to `Foo.prototype`
+Bar.prototype = Object.create( Foo.prototype );
+
+// Beware! Now `Bar.prototype.constructor` is gone,
+// and might need to be manually "fixed" if you're
+// in the habit of relying on such properties!
+
+Object.defineProperty( Foo.prototype, "constructor" , {
+	enumerable: false,
+	writable: true,
+	configurable: true,
+	value: Foo    // point `.constructor` at `Foo`
+} );
+
+Bar.prototype.myLabel = function() {
+	return this.label;
+};
+
+
+
+[[Prototype]] mechanism is an internal link that exists on one object which references some other object.
+
+This linkage is (primarily) exercised when a property/method reference is made against the first object, and no such property/method exists. In that case, the [[Prototype]] linkage tells the engine to look for the property/method on the linked-to object. In turn, if that object cannot fulfill the look-up, its [[Prototype]] is followed, and so on. This series of links between objects forms what is called the "prototype chain".
+
+
+
+
+var a = new Bar( "a", "obj a" );
+
+a.myName(); // "a"
+a.myLabel(); // "obj a"
+
+

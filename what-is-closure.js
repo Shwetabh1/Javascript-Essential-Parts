@@ -6,7 +6,8 @@
 
 //1. What is closure
 /* 
- * Closures are functions that have access to the outer (enclosing) function's variables—scope chain even after the outer function has returned.
+ * Closures are functions that have access to the outer (enclosing) function's variables—scope chain even after the outer function
+ * has returned.
  * A closure is the combination of a function and the lexical environment within which that function was declared.
  * The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available.
  * Remember it this way. Closure is nothing but a function with preserved data.
@@ -78,7 +79,7 @@ var c = create();
 c.increment();
 c.print(); // 1
 
-//EXAMPLE 3 print 1 to 5 and use setTimout in it.
+//EXAMPLE 3 print 1 to 5 and use setTimeout in it.
 function closureDummy(n) {
     var num = n;
     setTimeout(function() {

@@ -44,3 +44,14 @@ var first = new Person('John', 26);
  *The prototype object is shared among all objects created with that constructor function.
  *This means we can add functions and properties to the prototype that all of our objects can use.
  */
+
+
+ class is just a syntactic sugar in JS and underneath is just a constructor function.
+
+
+ a brand new object is created (aka, constructed) out of thin air
+the newly constructed object is [[Prototype]]-linked
+the newly constructed object is set as the this binding for that function call
+unless the function returns its own alternate object, the new-invoked function call will automatically return the newly constructed object.
+
+Why in JavaScript do both Object instanceof Function and Function instanceof Object return true?

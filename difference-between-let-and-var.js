@@ -45,7 +45,7 @@ let letItGo ;
 
 //3. Performance
 //let is faster than var, but only when inside a different scope than the main scope of a function. 
-//In the main scope, var and let are roughly identical in performance.
+//In the main scope, var and let are roughly identical in performance. Plus Browser support for let.
 
 //4. let variables may not be redeclared by a subsequent var or let.
 
@@ -66,3 +66,14 @@ let a = 'b'; //thorws an error;
 /*  
  * NOTE: const is similar to let in all aspects apart from the fact that variable declared via const can't be reassigned.
  */
+
+ //const
+ // variables declared via const must always be initialized.
+ // objects declared via const can have changed properties.
+
+ const abc = {
+    a: 5,
+    b: 6
+ };
+
+ // abc can be changed but not not its assignment cuz that is constant

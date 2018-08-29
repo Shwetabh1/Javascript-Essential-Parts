@@ -15,7 +15,6 @@
 
 (function () {
     var foo = "bar";
-
     // Outputs: "bar"
     console.log(foo);
 })();
@@ -23,9 +22,4 @@
 // ReferenceError: foo is not defined
 console.log(foo);
 
-//Unfortunately, the draw back of iife is: The evaluation of given expression is always undefined, 
-//so if your IIFE function returns anything, you can't use it.
-//An example:
-
-const foo = void function bar() { return 'foo'; }();
-console.log(foo); // undefined
+// It is used in Module Design Pattern to obtain data privacy
