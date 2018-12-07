@@ -52,3 +52,14 @@ obj.myFunc() // foo ... then... foo
 
 //Function expressions are best for object methods.
 //Arrow functions are best for callbacks or methods like map, reduce, or forEach
+
+
+// NOTE: By default the return type of function is undefined
+
+function notReturning() {
+
+}
+
+var z = notReturning();
+
+//z would be undefined.
