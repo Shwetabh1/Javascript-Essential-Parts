@@ -117,3 +117,17 @@ function even(elem){
 }
 let array = [1,2,3,4,5,6,7,8,9,10];
 array.filter(even); // return [2,4,6,8,10]
+
+//every method
+//it returns a boolean verifying the array passes the condition set by the function
+
+function greaterThan40(elem){
+	return elem > 40;
+}
+
+let arr1 = [1,2,3,4,5,6,7,8,9,10];
+let arr2 = [41,42,43,44];
+
+console.log(arr1.every(greaterThan40)); // returns false;
+console.log(arr2.every(greaterThan40)); // returns true;
+
