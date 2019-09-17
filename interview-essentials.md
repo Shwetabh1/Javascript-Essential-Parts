@@ -1,11 +1,17 @@
-1. General Web Knowledge
+*1. General Web Knowledge*
 You will be expected to have a grasp of the technologies and paradigms that make up the web.
 
 HTTP requests – GET and POST along with associated headers such as Cache-Control, ETag, Status Codes, and Transfer-Encoding.
 REST vs RPC.
 Security – when to use JSONP, CORs, and iFrame policies.
+How page loads in browser?
+What happens after hitting a URL.
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
+https://stackoverflow.com/questions/7515227/describe-the-page-rendering-process-in-a-browser/52494580#52494580
+https://stackoverflow.com/questions/5165310/what-is-the-complete-process-from-entering-a-url-to-the-browsers-address-bar-to/52495573#52495573
 
-2. Javascript
+
+*2. Javascript*
 
 Execution context, especially lexical scope and closures.
 Hoisting, function & block scoping and function expressions & declarations.
@@ -17,7 +23,7 @@ Type Coercion using typeof, instanceof and Object.prototype.toString.
 Handling asynchronous calls with callbacks, promises, await and async.
 When to use function declarations and expressions.
 
-3. DOM
+*3. DOM*
 
 Selecting or finding nodes using document.querySelector and in older browsers document.getElementsByTagName.
 Traversal up and down – Node.parentNode, Node.firstChild, Node.lastChild and Node.childNodes.
@@ -25,8 +31,7 @@ Traversal left and right – Node.previousSibling and Node.nextSibling.
 Manipulation – add, remove, copy, and create nodes in the DOM tree. You should know operations such as how to change the text content of a node and toggle, remove or add a CSS classname.
 Performance – touching the DOM can be expensive when you have many nodes, you should at least know about document fragments and node caching.
 
-4. SYSTEM DESIGN
-
+*4. SYSTEM DESIGN*
 
 Rendering – client-side (CSR), server-side (SSR) and universal rendering.
 Layout – if you’re designing a system used by multiple development teams, you need to think about building components and if you require teams to follow a consist markup to use said components.
