@@ -1,4 +1,4 @@
-*1. General Web Knowledge*
+*1. General Web Knowledge* <br>
 You will be expected to have a grasp of the technologies and paradigms that make up the web.
 
 HTTP requests – GET and POST along with associated headers such as Cache-Control, ETag, Status Codes, and Transfer-Encoding.
