@@ -21,7 +21,7 @@ Then it generate the machine code that the CPU can execute.
 Finally, the code is executed.
 */
 
-// 2.Hoisting for var, let and const.
+// 2. Hoisting for var, let and const.
 //Hoisting doesn't happen for let and const.
 //Consider the follwing example:
 
