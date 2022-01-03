@@ -1,0 +1,39 @@
+ALL THESE ARE DERIVED FROM STATE_OF_JS_SURVEY
+
+BROWSER APIS YOU SHOULD KNOW
+- Custom Elements
+- Fetch
+- Websocket
+- LocalStorage
+- Service Worker
+- WebRTC
+- WebSpeech
+- Shadow DOM
+- Intl
+- WebGL, WebVR, WebAudio, WebAnimation
+
+SYNTACTICAL TERMS
+
+- Optional Chaining
+- Private Fields
+- Arrow Functions 
+- Destructuring
+- Spread Operator
+- Nullish Coalescing
+- 
+
+Language
+- Decorators 
+- Dynamic Import
+- Proxies
+- Async Await
+- Promises
+- Promise.allSettled
+
+TERMS
+- PWA
+- Web Assemly
+
+- Typed Arrays
+- BigInt
+- Array.prototype.flat

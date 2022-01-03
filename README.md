@@ -40,3 +40,5 @@ The above quote is what motivated me to create this repository. This repository 
 1. JIT compilation in JS.
 1. https://www.html5rocks.com/en/tutorials/appcache/beginner/ [cache in HTML5]
 1. https://dev.to/worldindev/400-javascript-interview-questions-with-answers-2fcj [interview question repos]
+
+[![Shwetabh's github stats](https://github-readme-stats.vercel.app/api?username=shwetabh1)](https://github.com/anuraghazra/github-readme-stats)
